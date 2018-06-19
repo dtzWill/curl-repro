@@ -31,6 +31,8 @@ CURL * makeHandle(const std::string & URL) {
   curl_easy_setopt(c, CURLOPT_LOW_SPEED_LIMIT, 1L);
   curl_easy_setopt(c, CURLOPT_LOW_SPEED_TIME, 300L);
 
+  curl_easy_setopt(c, CURLOPT_VERBOSE, 1L);
+
   return c;
 }
 
