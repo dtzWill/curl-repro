@@ -12,6 +12,7 @@ let
 
   curl_asan = curl.overrideDerivation (o: {
     NIX_CFLAGS_COMPILE = (o.NIX_CFLAGS_COMPILE or []) ++ extraCFLAGS;
+    separateDebugInfo = false;
     dontStrip = true;
 
     configureFlags = (o.configureFlags or []) ++ [
