@@ -12,7 +12,7 @@ let
     "-fsanitize=address"
   ];
 
-  curl_asan = curl.overrideDerivation (o: {
+  curl_asan = curl.overrideAttrs(o: {
     NIX_CFLAGS_COMPILE = (o.NIX_CFLAGS_COMPILE or []) ++ extraCFLAGS;
     separateDebugInfo = false;
     dontStrip = true;
