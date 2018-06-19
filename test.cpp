@@ -36,24 +36,7 @@ CURL * makeHandle(const std::string & URL) {
   return c;
 }
 
-int main() {
-
-  auto curlm = curl_multi_init();
-
-  curl_multi_setopt(curlm, CURLMOPT_PIPELINING, CURLPIPE_MULTIPLEX);
-  curl_multi_setopt(curlm, CURLMOPT_MAX_TOTAL_CONNECTIONS, 25L);
-
-
-
-  std::vector<CURL *> handles;
-
-  handles.push_back(makeHandle("https://cache.nixos.org/3cjpslnfh6v1yq28vzw09i313v0wk0d2.narinfo"));
-  handles.push_back(makeHandle("https://cache.nixos.org/r4h24d8afw7n0vsh0sfg2ha0cfkb5cyv.narinfo'"));
-  handles.push_back(makeHandle("https://cache.nixos.org/4p66fbi78b0gahvbhmpv56hacg3kmj5g.narinfo"));
-
-  for (auto *c: handles)
-    curl_multi_add_handle(curlm, c);
-
+void go_go_gadget_curl(CURLM *curlm) {
   while (true) {
     int running;
     auto mc = curl_multi_perform(curlm, &running);
@@ -74,7 +57,7 @@ int main() {
     }
 
     if (running == 0)
-      break;
+      return;
 
     mc = curl_multi_wait(curlm, nullptr, 0, 0, nullptr);
     if (mc != CURLM_OK) {
@@ -82,6 +65,27 @@ int main() {
       exit(1);
     }
   }
+}
+
+int main() {
+
+  auto curlm = curl_multi_init();
+
+  curl_multi_setopt(curlm, CURLMOPT_PIPELINING, CURLPIPE_MULTIPLEX);
+  curl_multi_setopt(curlm, CURLMOPT_MAX_TOTAL_CONNECTIONS, 25L);
+
+
+
+  std::vector<CURL *> handles;
+
+  handles.push_back(makeHandle("https://cache.nixos.org/3cjpslnfh6v1yq28vzw09i313v0wk0d2.narinfo"));
+  handles.push_back(makeHandle("https://cache.nixos.org/r4h24d8afw7n0vsh0sfg2ha0cfkb5cyv.narinfo'"));
+  handles.push_back(makeHandle("https://cache.nixos.org/4p66fbi78b0gahvbhmpv56hacg3kmj5g.narinfo"));
+
+  for (auto *c: handles)
+    curl_multi_add_handle(curlm, c);
+
+  go_go_gadget_curl(curlm);
 
 
   curl_multi_cleanup(curlm);
