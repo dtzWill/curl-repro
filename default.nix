@@ -1,4 +1,4 @@
-{ nixpkgs ? <nixpkgs> }:
+{ nixpkgs ? builtins.fetchTarball channel:nixos-unstable }:
 
 with import nixpkgs {};
 
