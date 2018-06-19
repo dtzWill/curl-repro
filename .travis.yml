@@ -6,3 +6,7 @@ before_install:
 
 # Force VM instead of container, so that sandbox works
 sudo: required
+
+script:
+  - nix build
+  - ./result/bin/test
