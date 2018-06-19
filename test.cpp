@@ -85,8 +85,13 @@ int main() {
   for (auto *c: handles)
     curl_multi_add_handle(curlm, c);
 
+  handles.clear();
+
   go_go_gadget_curl(curlm);
 
+  curl_multi_add_handle(curlm, makeHandle("https://cache.nixos.org/0dmssn172jc1251l65sgxb5jcqmyfqnn.narinfo"));
+
+  go_go_gadget_curl(curlm);
 
   curl_multi_cleanup(curlm);
 
