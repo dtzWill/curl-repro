@@ -66,7 +66,7 @@ int main() {
     CURLMsg *msg;
     while ((msg = curl_multi_info_read(curlm, &left))) {
       if (msg->msg == CURLMSG_DONE) {
-        std::cout << "request finished!\n";
+        std::cout << "\nrequest finished!\n";
         auto *h = msg->easy_handle;
         curl_multi_remove_handle(curlm, h);
         curl_easy_cleanup(h);
