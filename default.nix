@@ -12,6 +12,12 @@ let
 
   curl_asan = curl.overrideDerivation (o: {
     NIX_CFLAGS_COMPILE = (o.NIX_CFLAGS_COMPILE or []) ++ extraCFLAGS;
+    dontStrip = true;
+
+    configureFlags = (o.configureFlags or []) ++ [
+      "--enable-debug"
+      "--enable-curldebug"
+    ];
   });
 in
 stdenv.mkDerivation {
@@ -23,6 +29,8 @@ stdenv.mkDerivation {
   src = builtins.fetchGit ./.;
 
   NIX_CFLAGS_COMPILE = extraCFLAGS;
+
+  dontStrip = true;
 
   installPhase = ''
     install -D -t $out/bin test
