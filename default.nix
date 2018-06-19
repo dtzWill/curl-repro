@@ -1,6 +1,6 @@
 { nixpkgs ? 
   builtins.fetchTarball https://github.com/NixOS/nixpkgs/archive/f9ad1cae78b5fc27a5bf2f17b3f9ebf7b239b3ca.tar.gz
-}}::
+}:
 
 with import nixpkgs {};
 
