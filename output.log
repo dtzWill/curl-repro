@@ -1,0 +1,449 @@
+* STATE: INIT => CONNECT handle 0x62a000006208; line 1407 (connection #-5000)
+* Added connection 0. The cache now contains 1 members
+* STATE: CONNECT => WAITRESOLVE handle 0x62a000006208; line 1443 (connection #0)
+* STATE: INIT => CONNECT handle 0x62a00000c208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [serially]
+* Server doesn't support multi-use yet, wait
+* No connections available.
+* STATE: CONNECT => CONNECT_PEND handle 0x62a00000c208; line 1426 (connection #-5000)
+* STATE: INIT => CONNECT handle 0x62a000012208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [serially]
+* Server doesn't support multi-use yet, wait
+* No connections available.
+* STATE: CONNECT => CONNECT_PEND handle 0x62a000012208; line 1426 (connection #-5000)
+* STATE: INIT => CONNECT handle 0x62a00001e208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [serially]
+* Server doesn't support multi-use yet, wait
+* No connections available.
+* STATE: CONNECT => CONNECT_PEND handle 0x62a00001e208; line 1426 (connection #-5000)
+* STATE: INIT => CONNECT handle 0x62a000024208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [serially]
+* Server doesn't support multi-use yet, wait
+* No connections available.
+* STATE: CONNECT => CONNECT_PEND handle 0x62a000024208; line 1426 (connection #-5000)
+*   Trying 2600:9000:204d:ca00:10:dfa4:b0c0:93a1...
+* TCP_NODELAY set
+* STATE: WAITRESOLVE => WAITCONNECT handle 0x62a000006208; line 1524 (connection #0)
+* Connected to cache.nixos.org (2600:9000:204d:ca00:10:dfa4:b0c0:93a1) port 443 (#0)
+* STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x62a000006208; line 1576 (connection #0)
+* Marked for [keep alive]: HTTP default
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* STATE: SENDPROTOCONNECT => PROTOCONNECT handle 0x62a000006208; line 1590 (connection #0)
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: OU=GT33120842; OU=See www.rapidssl.com/resources/cps (c)15; OU=Domain Control Validated - RapidSSL(R); CN=cache.nixos.org
+*  start date: Sep 23 08:17:49 2015 GMT
+*  expire date: Nov 23 21:08:12 2018 GMT
+*  issuer: C=US; O=GeoTrust Inc.; CN=RapidSSL SHA256 CA - G3
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* STATE: PROTOCONNECT => DO handle 0x62a000006208; line 1611 (connection #0)
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x62a000006208)
+> GET /ywszkz3c7mslkbnv672krq2f3vd9y1z0.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000006208; line 1673 (connection #0)
+* multi changed, check CONNECT_PEND queue!
+* STATE: CONNECT_PEND => CONNECT handle 0x62a00000c208; line 3093 (connection #-5000)
+* STATE: CONNECT_PEND => CONNECT handle 0x62a000012208; line 3093 (connection #-5000)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000006208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000006208; line 1815 (connection #0)
+* Connection state changed (MAX_CONCURRENT_STREAMS == 128)!
+* multi changed, check CONNECT_PEND queue!
+* STATE: CONNECT_PEND => CONNECT handle 0x62a00001e208; line 3093 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (1)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a00000c208; line 1452 (connection #0)
+* Using Stream ID: 3 (easy handle 0x62a00000c208)
+> GET /wgjcqgva24xsw5mzpi6y9hha4qvxpj1b.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a00000c208; line 1673 (connection #0)
+* STATE: CONNECT_PEND => CONNECT handle 0x62a000024208; line 3093 (connection #-5000)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a00000c208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a00000c208; line 1815 (connection #0)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (2)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a000012208; line 1452 (connection #0)
+* Using Stream ID: 5 (easy handle 0x62a000012208)
+> GET /sci34dw0p3l16rf4dvm61mbcyv3i1csg.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000012208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000012208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000012208; line 1815 (connection #0)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (3)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a00001e208; line 1452 (connection #0)
+* Using Stream ID: 7 (easy handle 0x62a00001e208)
+> GET /s7wpxinyb8l8qhpmlzpzkk1q3flzf58a.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a00001e208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a00001e208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a00001e208; line 1815 (connection #0)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (4)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a000024208; line 1452 (connection #0)
+* Using Stream ID: 9 (easy handle 0x62a000024208)
+> GET /s3b0zxhvwc02h9kndbw6ni7kgn0lcwgx.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000024208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000024208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000024208; line 1815 (connection #0)
+* Curl_readwrite: forcibly told to drain data
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: xF7etzMW1RzxXAMsr0GCkmtSrAZb3fV1h27Op4PMj97PZ9kqhZmP1w==
+< 
+* STATE: PERFORM => DONE handle 0x62a000006208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/4, no more multi_done now!
+* Expire cleared
+* Curl_readwrite: forcibly told to drain data
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: 9fXqI5H0uDNlkxQ3TdncJGp_SHI762ySuZFdKBffNXDXcmRCidtOeg==
+< 
+* nread <= 0, server closed connection, bailing
+* STATE: PERFORM => DONE handle 0x62a000012208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/3, no more multi_done now!
+* Expire cleared
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: 3WKQRIQUeyOFll-dHPx48QQbnM6DDDyYJ-YkuodYMYiYO2hh3AnCAA==
+< 
+* STATE: PERFORM => DONE handle 0x62a00000c208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/2, no more multi_done now!
+* Expire cleared
+* Curl_readwrite: forcibly told to drain data
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: 16ObqBe1AExiPP2JHNCEJux8f8QOggCW8-oCb3FLLQbGQoNhmtqlNg==
+< 
+* nread <= 0, server closed connection, bailing
+* STATE: PERFORM => DONE handle 0x62a00001e208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/1, no more multi_done now!
+* Expire cleared
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: gtyUa8EIdWxTozH4uXhcMfQ07qYJ34s3WSulM2mEEhmMFHJ02AZr4w==
+< 
+* nread <= 0, server closed connection, bailing
+* STATE: PERFORM => DONE handle 0x62a000024208; line 1986 (connection #0)
+* multi_done
+* Connection #0 to host cache.nixos.org left intact
+* Expire cleared
+* STATE: INIT => CONNECT handle 0x62a000018208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Re-using existing connection! (#0) with host cache.nixos.org
+* Connected to cache.nixos.org (2600:9000:204d:ca00:10:dfa4:b0c0:93a1) port 443 (#0)
+* STATE: CONNECT => DO handle 0x62a000018208; line 1452 (connection #0)
+* Using Stream ID: b (easy handle 0x62a000018208)
+> GET /s0yaqb0sx5h9y22mwlj2vlwlp75mid9s.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000018208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000018208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000018208; line 1815 (connection #0)
+* STATE: INIT => CONNECT handle 0x62a000030208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (1)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a000030208; line 1452 (connection #0)
+* Using Stream ID: d (easy handle 0x62a000030208)
+> GET /rxlf5v1isil4kmwy5z38mb6n67p2vwzy.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000030208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000030208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000030208; line 1815 (connection #0)
+* STATE: INIT => CONNECT handle 0x62a000036208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (2)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a000036208; line 1452 (connection #0)
+* Using Stream ID: f (easy handle 0x62a000036208)
+> GET /ri4p8x84sq8jkg20cd2qrk8rwpgq6yxd.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000036208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000036208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000036208; line 1815 (connection #0)
+* STATE: INIT => CONNECT handle 0x62a00003c208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (3)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a00003c208; line 1452 (connection #0)
+* Using Stream ID: 11 (easy handle 0x62a00003c208)
+> GET /r4h24d8afw7n0vsh0sfg2ha0cfkb5cyv.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a00003c208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a00003c208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a00003c208; line 1815 (connection #0)
+* STATE: INIT => CONNECT handle 0x62a000042208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+* Conn: 0 (0x61d000001488) Receive pipe weight: (-1/0), penalized: FALSE
+* Multiplexed connection found!
+* Found connection 0, with requests in the pipe (4)
+* Re-using existing connection! (#0) with host cache.nixos.org
+* STATE: CONNECT => DO handle 0x62a000042208; line 1452 (connection #0)
+* Using Stream ID: 13 (easy handle 0x62a000042208)
+> GET /pn4mvcq0qiif12ay7aj9imbk31wa4zyq.narinfo HTTP/2
+Host: cache.nixos.org
+User-Agent: curl/7.60.0 NixRepro
+Accept: */*
+
+* STATE: DO => DO_DONE handle 0x62a000042208; line 1673 (connection #0)
+* STATE: DO_DONE => WAITPERFORM handle 0x62a000042208; line 1800 (connection #0)
+* STATE: WAITPERFORM => PERFORM handle 0x62a000042208; line 1815 (connection #0)
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: 5W9vzlngUQUGK102bhWySbqbrdKtxx0FI_2Bb_adBbZaANDhSuki5w==
+< 
+* STATE: PERFORM => DONE handle 0x62a000018208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/4, no more multi_done now!
+* Expire cleared
+* Curl_readwrite: forcibly told to drain data
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: 9lyK-9AH6JCOMs-B-YSHy0M1Nj4KlvGwI6A3pYraLozMXyWqr1PezA==
+< 
+* STATE: PERFORM => DONE handle 0x62a000036208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/3, no more multi_done now!
+* Expire cleared
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: i9xXXpI-v3Dx-DaGXFa3O_HwfnvBYxJ4GdeWvaL1MmlU6HwbSBzTzg==
+< 
+* nread <= 0, server closed connection, bailing
+* STATE: PERFORM => DONE handle 0x62a00003c208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/2, no more multi_done now!
+* Expire cleared
+* Curl_readwrite: forcibly told to drain data
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: yfKWmMpqAdFUd1dG-SRFvPxms6pIyUE4Klvto_xVkMIFu80IDvkYMQ==
+< 
+* STATE: PERFORM => DONE handle 0x62a000042208; line 1986 (connection #0)
+* multi_done
+* Connection still in use 0/1, no more multi_done now!
+* Expire cleared
+* HTTP/2 found, allow multiplexing
+< HTTP/2 404 
+< content-type: binary/octet-stream
+< content-length: 3
+< date: Thu, 03 May 2018 06:03:05 GMT
+< last-modified: Tue, 13 Sep 2016 10:54:19 GMT
+< etag: "4f4adcbf8c6f66dcfc8a3282ac2bf10a"
+< accept-ranges: bytes
+< server: AmazonS3
+< age: 26127
+< x-cache: Error from cloudfront
+< via: 1.1 a227ffa423b75fee7aeac116d8f8c037.cloudfront.net (CloudFront)
+< x-amz-cf-id: eL7oVYt9WiJMsIVq4f8gqk-unrZcRUD3IGvdRB1dZrWbDnLsZ7Dl7w==
+< 
+* STATE: PERFORM => DONE handle 0x62a000030208; line 1986 (connection #0)
+* multi_done
+* Connection #0 to host cache.nixos.org left intact
+* Expire cleared
+* STATE: INIT => CONNECT handle 0x62a00004e208; line 1407 (connection #-5000)
+* Found bundle for host cache.nixos.org: 0x606000000568 [can multiplex]
+=================================================================
+==4103==ERROR: AddressSanitizer: heap-use-after-free on address 0x62a0000309e0 at pc 0x7fec660dff99 bp 0x7ffe46b72d60 sp 0x7ffe46b72d58
+READ of size 1 at 0x62a0000309e0 thread T0
+    #0 0x7fec660dff98 in Curl_infof /build/curl-7.60.0/lib/sendf.c:235
+    #1 0x7fec66178fa9 in http2_connisdead /build/curl-7.60.0/lib/http2.c:214
+    #2 0x7fec66178fa9 in http2_conncheck /build/curl-7.60.0/lib/http2.c:236
+    #3 0x7fec660f17bf in extract_if_dead /build/curl-7.60.0/lib/url.c:973
+    #4 0x7fec660f37b5 in ConnectionExists /build/curl-7.60.0/lib/url.c:1140
+    #5 0x7fec660ff2b4 in create_conn /build/curl-7.60.0/lib/url.c:4397
+    #6 0x7fec660ff2b4 in Curl_connect /build/curl-7.60.0/lib/url.c:4660
+    #7 0x7fec6613200f in multi_runsingle /build/curl-7.60.0/lib/multi.c:1421
+    #8 0x7fec66134dc6 in curl_multi_perform /build/curl-7.60.0/lib/multi.c:2159
+    #9 0x401d04 in go_go_gadget_curl(void*) /build/source/test.cpp:42
+    #10 0x4023eb in main /build/source/test.cpp:136
+    #11 0x7fec653bcb8d in __libc_start_main (/nix/store/h0h8g09b87il61ik8dga8rdx3833lrbg-glibc-2.27/lib/libc.so.6+0x21b8d)
+    #12 0x4018e9 in _start (/nix/store/126148r7jcz13zm8q3rr2rgk2a39l0vn-curl-test/bin/test+0x4018e9)
+
+0x62a0000309e0 is located 2016 bytes inside of 21312-byte region [0x62a000030200,0x62a000035540)
+freed by thread T0 here:
+    #0 0x7fec665042d8 in __interceptor_free (/nix/store/zbpxgz7i7d866rncpbx1ydkadj5jqf8x-gcc-7.3.0-lib/lib/libasan.so.4+0xdc2d8)
+    #1 0x7fec66123a06 in curl_dofree /build/curl-7.60.0/lib/memdebug.c:330
+
+previously allocated by thread T0 here:
+    #0 0x7fec66504808 in __interceptor_calloc (/nix/store/zbpxgz7i7d866rncpbx1ydkadj5jqf8x-gcc-7.3.0-lib/lib/libasan.so.4+0xdc808)
+    #1 0x7fec66123729 in curl_docalloc /build/curl-7.60.0/lib/memdebug.c:206
+
+SUMMARY: AddressSanitizer: heap-use-after-free /build/curl-7.60.0/lib/sendf.c:235 in Curl_infof
+Shadow bytes around the buggy address:
+  0x0c547fffe0e0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe0f0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe100: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe110: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe120: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x0c547fffe130: fd fd fd fd fd fd fd fd fd fd fd fd[fd]fd fd fd
+  0x0c547fffe140: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe150: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe160: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe170: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c547fffe180: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==4103==ABORTING
