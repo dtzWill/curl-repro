@@ -60,6 +60,17 @@ int main() {
       exit(1);
     }
 
+    int left;
+    CURLMsg *msg;
+    while ((msg = curl_multi_info_read(curlm, &left))) {
+      if (msg->msg == CURLMSG_DONE) {
+        std::cout << "request finished!\n";
+        auto *h = msg->easy_handle;
+        curl_multi_remove_handle(curlm, h);
+        curl_easy_cleanup(h);
+      }
+    }
+
     mc = curl_multi_wait(curlm, nullptr, 0, 0, nullptr);
     if (mc != CURLM_OK) {
       std::cerr << "unexpected error from curl_multi_wait: " << curl_multi_strerror(mc) << "\n";
@@ -72,3 +83,4 @@ int main() {
 
   return 0;
 }
+
