@@ -1,0 +1,28 @@
+diff --git a/lib/url.c b/lib/url.c
+index d29eddaea..0cab0a303 100644
+--- a/lib/url.c
++++ b/lib/url.c
+@@ -963,10 +963,11 @@ static bool extract_if_dead(struct connectdata *conn,
+     /* The check for a dead socket makes sense only if there are no
+        handles in pipeline and the connection isn't already marked in
+        use */
+     bool dead;
+ 
++    conn->data = data;
+     if(conn->handler->connection_check) {
+       /* The protocol has a special method for checking the state of the
+          connection. Use it to check if the connection is dead. */
+       unsigned int state;
+ 
+@@ -977,11 +978,10 @@ static bool extract_if_dead(struct connectdata *conn,
+       /* Use the general method for determining the death of a connection */
+       dead = SocketIsDead(conn->sock[FIRSTSOCKET]);
+     }
+ 
+     if(dead) {
+-      conn->data = data;
+       infof(data, "Connection %ld seems to be dead!\n", conn->connection_id);
+       Curl_conncache_remove_conn(conn, FALSE);
+       return TRUE;
+     }
+   }

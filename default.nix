@@ -21,6 +21,10 @@ let
       "--enable-debug"
       "--enable-curldebug"
     ];
+
+    patches = (o.patches or []) ++ [
+      ./fix1.patch
+    ];
   });
 in
 stdenv.mkDerivation {
