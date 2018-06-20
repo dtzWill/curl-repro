@@ -1,0 +1,16 @@
+diff --git a/lib/conncache.c b/lib/conncache.c
+index 6bd06582a..066542915 100644
+--- a/lib/conncache.c
++++ b/lib/conncache.c
+@@ -449,10 +449,11 @@ bool Curl_conncache_return_conn(struct connectdata *conn)
+       (void)Curl_disconnect(conn_candidate, /* dead_connection */ FALSE);
+     }
+   }
+   CONN_LOCK(data);
+   conn->inuse = FALSE; /* Mark the connection unused */
++  conn->data = NULL; /* no owner */
+   CONN_UNLOCK(data);
+ 
+   return (conn_candidate == conn) ? FALSE : TRUE;
+ 
+ }

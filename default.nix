@@ -24,6 +24,7 @@ let
 
     patches = (o.patches or []) ++ [
       ./fix1.patch
+      ./fix2.patch
     ];
   });
 in
