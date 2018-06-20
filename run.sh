@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ITERS=10
+ITERS=20
 BIN=$PWD/result/bin/test
 
 set -e
