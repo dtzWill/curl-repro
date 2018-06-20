@@ -9,4 +9,4 @@ sudo: required
 
 script:
   - nix build
-  - ./result/bin/test
+  - ./run.sh
