@@ -41,6 +41,6 @@ stdenv.mkDerivation {
   dontStrip = true;
 
   installPhase = ''
-    install -D -t $out/bin test
+    install -D -t $out/bin test multi-stress
   '';
 }
