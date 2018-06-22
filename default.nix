@@ -12,7 +12,7 @@ let
     "-fsanitize=address"
   ];
 
-  curl_asan = attrs: curl.overrideAttrs(o: {
+  base_curl_attrs = o: {
     NIX_CFLAGS_COMPILE = (o.NIX_CFLAGS_COMPILE or []) ++ extraCFLAGS;
     separateDebugInfo = false;
     dontStrip = true;
@@ -21,7 +21,9 @@ let
       "--enable-debug"
       "--enable-curldebug"
     ];
-  });
+  };
+  curl_asan_builder = extras: curl.overrideAttrs (o:
+    (base_curl_attrs o) // (extras o));
 
   buildTests = { name, curl ? curl }:
     stdenv.mkDerivation {
@@ -42,10 +44,10 @@ let
     };
 
 in {
-  use_curl_release = buildTests { name = "curl-release-tests"; curl = curl; };
+  use_curl_release = buildTests { name = "curl-release-tests"; curl = curl_asan_builder (o: {}); };
   use_curl_fix1 = buildTests {
     name = "curl-fix1-tests";
-    curl = curl.overrideAttrs (o:{
+    curl = curl_asan_builder (o: {
       patches = (o.patches or []) ++ [
         ./fix1.patch
       #  ./fix2.patch
@@ -54,7 +56,7 @@ in {
   };
   use_curl_git = buildTests {
     name = "curl-git-tests";
-    curl = curl.overrideAttrs (o:{
+    curl = curl_asan_builder (o: {
       src = builtins.fetchGit https://github.com/curl/curl;
       nativeBuildInputs = (o.nativeBuildInputs or []) ++ [ autoreconfHook ];
       preConfigure = ":"; # disable fixups we do that are only needed on release tarballs
