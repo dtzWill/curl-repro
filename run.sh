@@ -1,7 +1,11 @@
 #!/bin/sh
 
 ITERS=20
-BIN=$PWD/result/bin/test
+
+# XXX: Test each variant
+NIX_UNDER_TEST=$PWD/git-tests
+
+BIN=$NIX_UNDER_TEST/bin/test
 
 set -e
 
